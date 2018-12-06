@@ -1,13 +1,35 @@
-
-
 function setup() {
   createCanvas(windowWidth/3,windowHeight);
-}
+  var backgroundArray =  [color(232, 228, 223),     // Gray
+                          color(237, 237, 231),    // Light Gray
+                          color(252, 252, 246),    // Lighter Gray
+                          color(255, 254, 228),    // Light Yellow
+                          color(218, 202, 167),    // Dark Tan
+                          color(197, 181, 158),    // Brown
+                          color(197, 181, 158),     // Brick Red
+                          color(219, 212, 193)]     // Sand
 
+  backgroundColor = backgroundArray[Math.floor(Math.random() * backgroundArray.length)]
+  background(backgroundColor);
+}
+//
+// function resetBackground () {
+//   var backgroundArray =  [color(232, 228, 223),     // Gray
+//                           color(237, 237, 231),    // Light Gray
+//                           color(252, 252, 246),    // Lighter Gray
+//                           color(255, 254, 228),    // Light Yellow
+//                           color(218, 202, 167),    // Dark Tan
+//                           color(197, 181, 158),    // Brown
+//                           color(197, 181, 158),     // Brick Red
+//                           color(219, 212, 193)]     // Sand
+//
+//   backgroundColor = backgroundArray[Math.floor(Math.random() * backgroundArray.length)]
+//
+// }
 
 
 function draw () {
-  frameRate(1);
+  frameRate(0.15);
   backgroundDraw();
   triangleDraw();
   quadDraw();
@@ -30,7 +52,11 @@ function backgroundDraw () {
 
   backgroundColor = backgroundArray[Math.floor(Math.random() * backgroundArray.length)]
   background(backgroundColor);
+  console.log("background color is:")
+
 }
+
+
 
 function circleDraw () {
   var elementColorArray =  [color(206, 78, 41),        // Orange
@@ -51,6 +77,7 @@ function circleDraw () {
 
   if (circleChoice == 1) {
 
+
     var radius = random(20, 100)
 
     push();
@@ -58,7 +85,10 @@ function circleDraw () {
     fill(quadColor);
     translate(random(0, width), random(0, height));
     ellipse(20, 20, radius, radius);
+    console.log("small circle selected")
+    console.log("circle color is:")
     pop();
+
   }
 
   if (circleChoice == 2 && rectChoice == 2 && quadChoice == 3) {
@@ -70,7 +100,10 @@ function circleDraw () {
     fill(quadColor);
     translate(random(0, width), random(0, height));
     ellipse(20, 20, radius, radius);
+    console.log("large circle selected")
+    console.log("circle color is:")
     pop();
+
   }
 }
 
@@ -111,6 +144,9 @@ function rectangleDraw () {
     translate(-23, -123);
     rect(17,21,10,205);
     pop();
+
+    console.log("small rectangles drawn")
+    console.log("rectangle color is:")
 
     var toggleArray = [1, 2];
     toggle = toggleArray[Math.floor(Math.random() * toggleArray.length)]

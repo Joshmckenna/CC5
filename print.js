@@ -115,7 +115,7 @@ function draw () {
   text(input12, 10, 1000);
 
   if (input12 == '}' && messageSend == 0) {
-    print();
+    // print();
     console.log("PAUSE")
     status = 0;
     sendTheMessage();

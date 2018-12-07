@@ -3,7 +3,11 @@ var pubKey = 'pub-c-9139d554-268f-4bd7-b408-e5d34d178b6b';
 var subKey = 'sub-c-8d55adee-f983-11e8-a39c-e60c31199fb2';
 var channelName = 'CC5';
 var pauseSketch = 0;
+var myFont;
 
+function preload() {
+  myFont = loadFont('TitilliumWeb-Regular.ttf');
+}
 
 function setup() {
   createCanvas(windowWidth/3,windowHeight);
@@ -65,6 +69,7 @@ function draw () {
   }
   if (frameCount % 8 === 7) {
   circleDraw();
+  posterTitle ()
   var myString12 = '}'
 
   function sendTheMessage() {
@@ -578,6 +583,21 @@ function quadDraw2 () {
   }
 }
 
+function posterTitle () {
+
+  var xQuardrantArray = [20, width-160]
+  var yQuardrantArray = [40, height-60]
+
+  xCoord = xQuardrantArray[Math.floor(Math.random() * xQuardrantArray.length)]
+  yCoord = yQuardrantArray[Math.floor(Math.random() * yQuardrantArray.length)]
+
+
+  color(0);
+  textAlign(LEFT);
+  textFont(myFont);
+  textSize(14);
+  text("// generative(system);\nCreation & Computation\nDigital Futures", xCoord, yCoord);
+}
 
 
 function triangleDraw () {

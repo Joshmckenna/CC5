@@ -1,15 +1,7 @@
-section {
-  position: fixed;
-  z-index: 50;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url('oilbrush.png');
-  background-size: cover;
+*, canvas {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
 }
-
 
 #sketch1, #sketch2, #sketch3 {
     display: inline-block;

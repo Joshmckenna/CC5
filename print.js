@@ -17,7 +17,7 @@ var input13;
 var input14;
 var input15;
 
-var timer = 10;
+var timer = 20;
 var timerStatus = false;
 
 var status = 0;
@@ -32,7 +32,7 @@ function timerFunction () {
 
   if ( timer <= 0){
     timerStatus = false;
-    timer = 3;
+    timer = 1;
     status  = 1;
     sendTheMessage();
   }
@@ -122,8 +122,8 @@ function draw () {
   text(input12, 10, 870);
 
   if (input12 == '}' && messageSend == 0) {
-    text("// generative(system);\nCreation & Computation\nDigital Futures", 10, 824)
-    print();
+    text("// generative(system);\n// Creation & Computation\n// Digital Futures", 10, 824)
+    // print();
     console.log("PAUSE");
     status = 0;
     sendTheMessage();
@@ -154,7 +154,7 @@ if (status == 0){
   timerStatus = true;
   console.log("paused the sketch");
 } else {
-  timer = 3;
+  timer = 20;
   console.log("cont. the sketch");
   messageSend = 0;
   background(255);

@@ -52,22 +52,22 @@ function draw () {
   } else {
 
   frameRate(1);
-  if (frameCount % 8 === 2) {
+  if (frameCount % 9 === 3) {
   backgroundDraw();
 }
-  if (frameCount % 8 === 3) {
+  if (frameCount % 9 === 4) {
   triangleDraw();
 }
- if (frameCount % 8 === 4) {
+ if (frameCount % 9 === 5) {
   quadDraw1();
 }
-  if (frameCount % 8 === 5) {
+  if (frameCount % 9 === 6) {
   quadDraw2();
 }
-  if (frameCount % 8 === 6) {
+  if (frameCount % 9 === 7) {
   rectangleDraw();
   }
-  if (frameCount % 8 === 7) {
+  if (frameCount % 9 === 8) {
   circleDraw();
   posterTitle ()
   var myString12 = '}'
@@ -583,10 +583,12 @@ function quadDraw2 () {
   }
 }
 
+  var posterNumber = 1;
+
 function posterTitle () {
 
   var xQuardrantArray = [20, width-160]
-  var yQuardrantArray = [40, height-60]
+  var yQuardrantArray = [40, height-80]
 
   xCoord = xQuardrantArray[Math.floor(Math.random() * xQuardrantArray.length)]
   yCoord = yQuardrantArray[Math.floor(Math.random() * yQuardrantArray.length)]
@@ -596,7 +598,9 @@ function posterTitle () {
   textAlign(LEFT);
   textFont(myFont);
   textSize(14);
-  text("// generative(system);\nCreation & Computation\nDigital Futures", xCoord, yCoord);
+  text("// generative(system);\nCreation & Computation\nDigital Futures\n" + "Poster " + posterNumber, xCoord, yCoord);
+
+  posterNumber++;
 }
 
 

@@ -11,7 +11,7 @@ var rows;
 var cols;
 var w = 90;
 // var fraction = 5;
-margin = 5
+margin = 0
 
 function setup() {
     createCanvas(windowWidth/3, windowHeight);
@@ -24,7 +24,7 @@ function setup() {
         }
     }
 
-    var arrayFraction = [w+margin, (w+margin*2), (w+margin*3), (w+margin*4), (w+margin*5)];
+    var arrayFraction = [w, (w*2), (w*3), (w*4), (w*5)];
 
 
 
@@ -38,19 +38,14 @@ function draw() {
         }
     }
 
-    stroke(230);
-  	strokeWeight(1.5);
-    ellipse(width/fraction, 128, 5, 5);
-  	line(width/fraction, 128, width/fraction, height - 128)
-    ellipse((width/fraction)*2, 128, 5, 5);
-    line((width/fraction)*2, 128, (width/fraction)*2, height - 128)
-    ellipse((width/fraction)*3, 128, 5, 5);
-    line((width/fraction)*3, 128, (width/fraction)*3, height - 128)
-    ellipse((width/fraction)*4, 128, 5, 5);
-    line((width/fraction)*4, 128, (width/fraction)*4, height - 128)
-    ellipse((width/fraction)*5, 128, 5, 5);
-    line((width/fraction)*5, 128, (width/fraction)*5, height - 128)
-
+    push();
+    stroke(0);
+  	strokeWeight(4);
+  	line(w+margin, 128, w+margin, height - 128)
+    line((w*2+margin), 128, (w*2+margin), height - 128)
+    line((w*3+margin), 128, (w*3+margin), height - 128)
+    line((w*4+margin), 128, (w*4+margin), height - 128)
+    pop();
 }
 
 // function arcDraw(){

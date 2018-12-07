@@ -23,6 +23,8 @@ var timerStatus = false;
 var status = 0;
 var messageSend = 0;
 
+var myFont;
+
 function timerFunction () {
   if ( timerStatus == true){
     timer = timer - 1;
@@ -34,6 +36,10 @@ function timerFunction () {
     status  = 1;
     sendTheMessage();
   }
+}
+
+function preload() {
+  myFont = loadFont('TitilliumWeb-Light.ttf');
 }
 
 function setup() {
@@ -92,6 +98,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 }
 
 function draw () {
+  textFont(myFont);
   textSize(10);
   // background
   text(input1, 10, 20);

@@ -70,6 +70,7 @@ function draw () {
   if (frameCount % 9 === 8) {
   circleDraw();
   posterTitle ()
+  save('CC5-Generative-Systems.jpg');
   var myString12 = '}'
 
   function sendTheMessage() {

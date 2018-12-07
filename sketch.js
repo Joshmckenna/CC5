@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth/3,windowHeight);
+  createCanvas(windowWidth,windowHeight);
 
   // PubNub
 	dataServer = new PubNub( {
@@ -111,7 +111,7 @@ function backgroundDraw () {
   backgroundColor = backgroundArray[Math.floor(Math.random() * backgroundArray.length)]
   background(backgroundColor);
 
-var myString1 = "function setup() {\ncreateCanvas(" + Math.floor(windowWidth/3) +", " + Math.floor(windowHeight) + ");\n}\nfunction draw () {\n"
+var myString1 = "function setup() {\ncreateCanvas(" + Math.floor(windowWidth) +", " + Math.floor(windowHeight) + ");\n}\nfunction draw () {\n"
 myString1 += "background("+ backgroundColor + ");\n"
 
 

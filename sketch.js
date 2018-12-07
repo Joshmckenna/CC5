@@ -48,22 +48,22 @@ function draw () {
   } else {
 
   frameRate(1);
-  if (frameCount % 7 === 1) {
+  if (frameCount % 8 === 2) {
   backgroundDraw();
 }
-  if (frameCount % 7 === 2) {
+  if (frameCount % 8 === 3) {
   triangleDraw();
 }
- if (frameCount % 7 === 3) {
+ if (frameCount % 8 === 4) {
   quadDraw1();
 }
-  if (frameCount % 7 === 4) {
+  if (frameCount % 8 === 5) {
   quadDraw2();
 }
-  if (frameCount % 7 === 5) {
+  if (frameCount % 8 === 6) {
   rectangleDraw();
   }
-  if (frameCount % 7 === 6) {
+  if (frameCount % 8 === 7) {
   circleDraw();
   var myString12 = '}'
 
@@ -283,26 +283,26 @@ function rectangleDraw () {
     // console.log("// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate4X + ", " + translate4Y + ");\nrotate(" + rotate2 + ");\nrect(0, 0, " + rectW2 + ", " + rectH2 + ");\n")
 
     var myString4 = "angleMode(DEGREES)\n"
-    myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate3X + ", " + translate3Y + ");\nrotate(" + rotate1 + ");\nrect(0, 0, " + rectW1 + ", " + rectH1 + ");\n"
-    myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate4X + ", " + translate4Y + ");\nrotate(" + rotate2 + ");\nrect(0, 0, " + rectW2 + ", " + rectH2 + ");\n"
+    myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate3X + ", " + translate3Y + ");\nrotate(" + rotate1 + ");\nrect(0, 0, " + rectW1 + ", " + rectH1 + ");\n\n"
+    myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate4X + ", " + translate4Y + ");\nrotate(" + rotate2 + ");\nrect(0, 0, " + rectW2 + ", " + rectH2 + ");\n\n"
 
-    function sendTheMessage() {
-
-      // Send Data to the server to draw it in all other canvases
-      dataServer.publish(
-        {
-          channel: channelName,
-    	    message: {
-                      input4: myString4,
-    	               }
-
-        });
-
-    console.log("published");
-
-    }
-
-    sendTheMessage();
+    // function sendTheMessage() {
+    //
+    //   // Send Data to the server to draw it in all other canvases
+    //   dataServer.publish(
+    //     {
+    //       channel: channelName,
+    // 	    message: {
+    //                   input4: myString4,
+    // 	               }
+    //
+    //     });
+    //
+    // console.log("published");
+    //
+    // }
+    //
+    // sendTheMessage();
 
 
     var toggleArray = [1, 2];
@@ -343,28 +343,29 @@ function rectangleDraw () {
       // console.log("// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate5X + ", " + translate5Y + ");\nrotate(" + rotate3 + ");\nrect(0, 0, " + rectW3 + ", " + rectH3 + ");\n")
       // console.log("// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate6X + ", " + translate6Y + ");\nrotate(" + rotate4 + ");\nrect(0, 0, " + rectW4 + ", " + rectH4 + ");\n")
 
-      var myString5 = "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate5X + ", " + translate5Y + ");\nrotate(" + rotate3 + ");\nrect(0, 0, " + rectW3 + ", " + rectH3 + ");\n"
-      myString5 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate6X + ", " + translate6Y + ");\nrotate(" + rotate4 + ");\nrect(0, 0, " + rectW4 + ", " + rectH4 + ");\n"
-
-      function sendTheMessage() {
-
-        // Send Data to the server to draw it in all other canvases
-        dataServer.publish(
-          {
-            channel: channelName,
-      	    message: {
-                        input5: myString5,
-      	               }
-
-          });
-
-      console.log("published");
-
-      }
-
-      sendTheMessage();
+      myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate5X + ", " + translate5Y + ");\nrotate(" + rotate3 + ");\nrect(0, 0, " + rectW3 + ", " + rectH3 + ");\n\n"
+      myString4 += "// Rectangle\nnoStroke();\nfill(" + rectColor + ");\ntranslate(" + translate6X + ", " + translate6Y + ");\nrotate(" + rotate4 + ");\nrect(0, 0, " + rectW4 + ", " + rectH4 + ");\n"
 
     }
+
+    function sendTheMessage() {
+
+      // Send Data to the server to draw it in all other canvases
+      dataServer.publish(
+        {
+          channel: channelName,
+          message: {
+                      input4: myString4,
+                     }
+
+        });
+
+    console.log("published");
+
+    }
+
+    sendTheMessage();
+
   }
 }
 
@@ -768,7 +769,20 @@ console.log("test")
    {
      if (inMessage.message.name == 0){
 	  if ( inMessage.message.status == 0 ) {pauseTheSketch();} }
-    if ( inMessage.message.status == 1 ) {pauseSketch = 0; background(0);} 
+    if ( inMessage.message.status == 1 ) {
+      pauseSketch = 0;
+      var backgroundArray =  [color(232, 228, 223),     // Gray
+                              color(237, 237, 231),    // Light Gray
+                              color(252, 252, 246),    // Lighter Gray
+                              color(255, 254, 228),    // Light Yellow
+                              color(218, 202, 167),    // Dark Tan
+                              color(197, 181, 158),    // Brown
+                              color(197, 181, 158),     // Brick Red
+                              color(219, 212, 193)]     // Sand
+
+      backgroundColor = backgroundArray[Math.floor(Math.random() * backgroundArray.length)]
+      background(backgroundColor);
+    }
    }
 }
 

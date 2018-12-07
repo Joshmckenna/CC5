@@ -6,7 +6,6 @@ var input1;
 var input2;
 var input3;
 var input4;
-var input5;
 var input6;
 var input7;
 var input8;
@@ -31,14 +30,14 @@ function timerFunction () {
 
   if ( timer <= 0){
     timerStatus = false;
-    timer = 10;
+    timer = 3;
     status  = 1;
     sendTheMessage();
   }
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth,1000);
 
   setInterval(timerFunction, 1000);
 
@@ -108,13 +107,12 @@ function draw () {
   text(input14, 10, 360);
   text(input15, 10, 360);
   // rect
-  text(input4, 10, 360);
-  text(input5, 10, 360);
+  text(input4, 10, 480);
   // circle
-  text(input2, 10, 360);
-  text(input3, 10, 360);
+  text(input2, 10, 920);
+  text(input3, 10, 920);
   // }
-  text(input12, 10, 360);
+  text(input12, 10, 1000);
 
   if (input12 == '}' && messageSend == 0) {
     console.log("PAUSE")
@@ -143,8 +141,15 @@ var print = 0;
     });
 
 
-if (status == 0){ timerStatus = true; console.log("paused the sketch");}
-else { timer = 10; console.log("cont. the sketch"); messageSend = 0;}
+if (status == 0){
+  timerStatus = true;
+  console.log("paused the sketch");
+} else {
+  timer = 3;
+  console.log("cont. the sketch");
+  messageSend = 0;
+  background(255);
+}
 
 
 }

@@ -116,8 +116,8 @@ function draw () {
 
   if (input12 == '}' && messageSend == 0) {
     text("// generative(system);\nCreation & Computation\nDigital Futures", 10, 824)
-    // print();
-    console.log("PAUSE")
+    print();
+    console.log("PAUSE");
     status = 0;
     sendTheMessage();
     messageSend = 1;

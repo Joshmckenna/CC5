@@ -92,29 +92,30 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 }
 
 function draw () {
-  textSize(12);
+  textSize(10);
   // background
-  text(input1, 10, 30);
+  text(input1, 10, 20);
   // triangle
-  text(input8, 10, 120);
-  text(input9, 10, 120);
-  text(input10, 10, 120);
-  text(input11, 10, 120);
+  text(input8, 10, 95);
+  text(input9, 10, 95);
+  text(input10, 10, 95);
+  text(input11, 10, 95);
   // quad 1
-  text(input6, 10, 240);
-  text(input7, 10, 240);
+  text(input6, 10, 190);
+  text(input7, 10, 190);
   // quad 2
-  text(input14, 10, 360);
-  text(input15, 10, 360);
+  text(input14, 10, 290);
+  text(input15, 10, 290);
   // rect
-  text(input4, 10, 480);
+  text(input4, 10, 390);
   // circle
-  text(input2, 10, 920);
-  text(input3, 10, 920);
+  text(input2, 10, 755);
+  text(input3, 10, 755);
   // }
-  text(input12, 10, 1000);
+  text(input12, 10, 870);
 
   if (input12 == '}' && messageSend == 0) {
+    text("// generative(system);\nCreation & Computation\nDigital Futures", 10, 824)
     // print();
     console.log("PAUSE")
     status = 0;

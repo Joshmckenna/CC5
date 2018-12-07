@@ -6,7 +6,7 @@ var pauseSketch = 0;
 var myFont;
 
 function preload() {
-  myFont = loadFont('TitilliumWeb-Regular.ttf');
+  myFont = loadFont('TitilliumWeb-Light.ttf');
 }
 
 function setup() {
